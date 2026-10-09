@@ -2,76 +2,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CloudBite - Version 1</title>
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #FFF3DF;
-  color: #743A20;
-}
-header {
-  background: #E87832;
-  color: white;
-  text-align: center;
-  padding: 24px;
-}
-nav {
-  background: #A84C20;
-  text-align: center;
-  padding: 14px;
-}
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 16px;
-  font-weight: bold;
-}
-main {
-  text-align: center;
-  padding: 45px 20px;
-}
-.menu {
-  background: white;
-  max-width: 500px;
-  margin: 25px auto;
-  padding: 25px;
-  border-radius: 10px;
-}
-footer {
-  background: #A84C20;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudBite - Version 2</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #DDF5F2;
+      color: #164E52;
+    }
+
+    header {
+      background: #087E8B;
+      color: white;
+      padding: 24px;
+      text-align: center;
+    }
+
+    nav {
+      background: #07545C;
+      padding: 14px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 16px;
+      font-weight: bold;
+    }
+
+    main {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .menu {
+      background: white;
+      max-width: 500px;
+      margin: 25px auto;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px #164E5220;
+    }
+
+    .version {
+      display: inline-block;
+      background: #087E8B;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #07545C;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-<header>
-  <h1>CloudBite</h1>
-  <p>Delicious food, delivered with love!</p>
-</header>
-<nav>
-  <a href="#">Home</a>
-  <a href="#menu">Menu</a>
-  <a href="#about">About</a>
-</nav>
-<main>
-  <h2>Welcome to CloudBite</h2>
-  <p>Explore our menu and discover your favourite dishes.</p>
-  <section class="menu" id="menu">
-    <h2>Our Menu</h2>
-    <p>Freshly prepared meals</p>
-    <p>Tasty snacks and treats</p>
-    <p>Something delicious for everyone</p>
-  </section>
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Serving happiness, one meal at a time.</p>
-  </section>
-</main>
-<footer>CloudBite | Version 1.0</footer>
+  <header>
+    <h1>CloudBite</h1>
+    <p>A fresh new look for your favourite food menu!</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <main>
+    <span class="version">VERSION 2.0</span>
+    <h2>Welcome to the New CloudBite</h2>
+    <p>Our website has been upgraded through AWS CodePipeline.</p>
+
+    <section class="menu" id="menu">
+      <h2>What's New?</h2>
+      <p>✓ Fresh mint background</p>
+      <p>✓ Modern teal navigation and header</p>
+      <p>✓ Updated layout and version label</p>
+    </section>
+
+    <section id="about">
+      <h2>Powered by AWS</h2>
+      <p>Deployed using AWS CodePipeline and CloudFormation.</p>
+    </section>
+  </main>
+
+  <footer>
+    CloudBite | Version 2.0 | AWS Cloud Practical
+  </footer>
 </body>
 </html>
