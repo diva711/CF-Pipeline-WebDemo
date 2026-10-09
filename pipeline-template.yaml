@@ -1,0 +1,53 @@
+
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CloudBite Test and Production Website Pipeline
+
+Parameters:
+  Environment:
+    Type: String
+    AllowedValues:
+      - test
+      - production
+    Default: test
+
+Resources:
+  ApplicationBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        IgnorePublicAcls: true
+        BlockPublicPolicy: false
+        RestrictPublicBuckets: false
+      WebsiteConfiguration:
+        IndexDocument: index.html
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Project
+          Value: CloudFormation-Pipeline-Lab
+
+  WebsiteReadPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref ApplicationBucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: PublicWebsiteReadOnly
+            Effect: Allow
+            Principal: '*'
+            Action: s3:GetObject
+            Resource: !Sub '${ApplicationBucket.Arn}/*'
+
+Outputs:
+  WebsiteBucket:
+    Description: S3 bucket for website files
+    Value: !Ref ApplicationBucket
+  WebsiteURL:
+    Description: Public website endpoint
+    Value: !Sub 'http://${ApplicationBucket}.s3-website.${AWS::Region}.amazonaws.com'
